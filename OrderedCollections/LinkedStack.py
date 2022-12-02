@@ -8,22 +8,22 @@ class LinkedStack:
 
     def __init__(self):
         self.head = None
-        self.length = 0
+        self.size = 0
     
-    def size(self) -> int:
-        return self.length
+    def length(self) -> int:
+        return self.size
     
     def push(self, item: object) -> None:
         newItem = LinkedStack.Node(item)
         newItem.item = item
         newItem.next =self.head
         self.head = newItem
-        self.length += 1
+        self.size += 1
     
     def pop(self) -> object:
         el = self.head.item
         self.head = self.head.next
-        self.length -= 1
+        self.size -= 1
         return el
     
     def peek(self) -> object:
@@ -41,26 +41,7 @@ class LinkedStack:
             else:
                 result += ", "
         return result
-    
-    
-def main():
-    print("start")
-    ls = LinkedStack()
-    print(ls.size())
-    ls.push(1)
-    ls.push(2)
-    ls.push(3)
-    print(ls.size())
-    print(ls)
-    ls.pop()
-    print(ls.size())
-    print(ls)
-    
-    
 
-    
-if __name__ == "__main__":
-    main()
 
 
     
